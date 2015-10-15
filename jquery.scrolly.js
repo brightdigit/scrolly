@@ -40,7 +40,7 @@
     this.velocity = this.$element.attr('data-velocity');
     this.bgStart = parseInt(this.$element.attr('data-fit'), 10);
 
-   $(document).bind('scroll', function(){
+   $(document).on('scroll', function(){
       self.didScroll = true;
       self.scrolly();
     });
