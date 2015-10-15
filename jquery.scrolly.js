@@ -40,16 +40,11 @@
     this.velocity = this.$element.attr('data-velocity');
     this.bgStart = parseInt(this.$element.attr('data-fit'), 10);
 
-    $(document).scroll(function(){
+   $(document).bind('scroll', function(){
       self.didScroll = true;
+      self.scrolly();
     });
-
-    setInterval(function() {
-      if (self.didScroll) {
-        self.didScroll = false;
-        self.scrolly();
-      }
-    }, 10);
+    self.scrolly();
   };
 
   Plugin.prototype.scrolly = function() {
