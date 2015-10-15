@@ -70,7 +70,7 @@
     if(this.bgStart){ position = position + this.bgStart; }
 
     if(this.options.bgParallax === true) {
-      this.$element.css({backgroundPosition: '50% '+position+'px'});
+      this.$element.css({backgroundPosition:  (this.options.horizontalPos || '50%') + ' ' + position+'px'});
     } else {
       this.$element.css({top: position});
     }
