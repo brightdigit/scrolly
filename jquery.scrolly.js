@@ -5,11 +5,15 @@
  *  Licence: MIT
  */
 !function(root, factory) {
-  if (typeof define === 'function' && define.amd) {
-    define(['jquery'], factory);
-  } else {
-    factory(root.jQuery);
-  }
+    if (typeof define === 'function' && define.amd) {
+        // AMD
+        define(['jquery'], factory);
+    } else if (typeof module === 'object' && module.exports) {
+        factory(require('jquery'));
+    } else {
+        // Browser globals
+        factory(jQuery);
+    }
 }(this, function($) {
   'use strict';
 
